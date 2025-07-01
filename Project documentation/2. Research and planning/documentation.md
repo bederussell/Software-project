@@ -11,3 +11,7 @@ The Agile approach is a dynamic, iterative process where the development of the 
 The WAgile approach is a combination of both Waterfall and Agile, and focuses on integrating both sequential and flexible methodologies. WAgile consists of allowing a project's development to be consistently reviewed and refined whilst maintaining a firm structure of static project requirements and and predefined development stages. This includes adapting code solutions to current feedback and exploring alternate possibilities of solutions, whilst keeping a focus on linear documentation and deadlines. This methodology will most likely work best for me as I can utilise this development approach in all stages of my project; the first few steps of development would work best with Waterfall (establishing a firm definition and structure of how I can develop the project), and the later steps would be most effective utilising Agile principles (constantly evaluating code and test data, and amending the paramteres of my model to make it consistently better over time).
 
 Overall, a WAgile approach with a focus on Waterfall during design phases and Agile during implementing phases would work best for my project, enabling me to produce a well-working model that fits initial requirements and deadlines whilst also being tailored to current feedback to ensure maximum efficiecy of the ML model.
+
+### Project and Time Management
+
+### Modelling Tools
