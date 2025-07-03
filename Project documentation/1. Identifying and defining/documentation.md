@@ -23,6 +23,15 @@ In order to manage/maintain the large amount of text data needed to train the ML
 
 ### Data Dictionary of Global Data
 
+|Data Item|Data Type|Data Format|Description|Example|
+|----|----|----|----|----|
+|df|Data Frame|[Column1 \t Column 2]|A two-dimensional table read file consisting of prompts in one column, and responses in another, each seperated by a tab \t|Hi, how are you doing today?      I'm doing great.|
+|prompts|Python List|[x, y, z, ...]|A Python list including all the prompts of the text file, gathered and seperated by the first column.|['Hi, how are you doing?', 'I need help.']|
+|responses|Python List|[x, y, z, ...]|A Python list including all the responses of the text file, gathered and seperated by the second column.|['I'm doing great.', 'How can I help you?']|
+|encoder|2D Array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each prompt in the 'prompts' list, all at a uniform length of 10 characters (through padding).|[['Hi'], ['how'], ['you'], ['doing?']]|
+|decoder|2D array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each response in the 'reponses' list, all at a uniform length of 10 characters (through padding)|[['I'm'], ['doing'], ['great.']]|
+
+
 ### Implementation Methods
 Suppose my new AI model is replacing another, older software model that the client is currently using. The old model was designed to predict the sentiment (good or bad) of a movie/book/show review, based on the way the reviewer described the piece of media (for example, if the review contained words such as 'forgettable', 'boring', 'unrealistic', then the model would predict the sentiment to be bad, and vice versa). The old model was trained strictly on movie review datasets, meaning it is useless in contexts outside of media reviews. However, the client now wants a model that is more versatile, being applicable to more broad contexts such as conversations, question answering, and predictions (the purpose of my new model). Below is a description of how each implementation method would work with this transition from the older model to my new project model.
 
