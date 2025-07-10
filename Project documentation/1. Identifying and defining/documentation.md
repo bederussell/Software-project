@@ -28,8 +28,8 @@ In order to manage/maintain the large amount of text data needed to train the ML
 |df|Data Frame|[Column1 \t Column 2]|A two-dimensional table read file consisting of prompts in one column, and responses in another, each seperated by a tab \t|Hi, how are you doing today?      I'm doing great.|
 |prompts|Python List|[x, y, z, ...]|A Python list including all the prompts of the text file, gathered and seperated by the first column.|['Hi, how are you doing?', 'I need help.']|
 |responses|Python List|[x, y, z, ...]|A Python list including all the responses of the text file, gathered and seperated by the second column.|['I'm doing great.', 'How can I help you?']|
-|encoder|2D Array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each prompt in the 'prompts' list, all at a uniform length of 10 characters (through padding).|[['Hi'], ['how'], ['you'], ['doing?']]|
-|decoder|2D array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each response in the 'reponses' list, all at a uniform length of 10 characters (through padding)|[['I'm'], ['doing'], ['great.']]|
+|encoder|2D Array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each prompt in the 'prompts' list, all at a uniform length of 10 characters (through padding).|[['Hi        ', 'how       ', 'you       ', 'doing?    '], ['I         ', 'need      ', 'help      ']]|
+|decoder|2D array|[[a, b, c], [x, y, z], ...]|A 2D array  where each item is another array of all tokenized, lemmatized words from each response in the 'reponses' list, all at a uniform length of 10 characters (through padding)|[['I'm       ', 'doing     ', 'great     '], ['How       ', 'can       ', 'help      ', 'you?      ']]|
 
 
 ### Implementation Methods
