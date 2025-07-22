@@ -15,3 +15,9 @@ Overall, a WAgile approach with a focus on Waterfall during design phases and Ag
 ### Project and Time Management
 
 ### Modelling Tools
+##### Class Diagram
+##### DFD
+##### Structure Chart
+![IMG_7957](https://github.com/user-attachments/assets/c997ed40-4dd3-4592-86ff-89fea4880320)
+
+
