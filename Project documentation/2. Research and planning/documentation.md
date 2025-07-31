@@ -13,6 +13,7 @@ The WAgile approach is a combination of both Waterfall and Agile, and focuses on
 Overall, a WAgile approach with a focus on Waterfall during design phases and Agile during implementing phases would work best for my project, enabling me to produce a well-working model that fits initial requirements and deadlines whilst also being tailored to current feedback to ensure maximum efficiecy of the ML model.
 
 ### Project and Time Management
+![gantt](https://github.com/user-attachments/assets/470fdb31-9dee-4557-a59b-6f3f30f3eaaa)
 
 ### Modelling Tools
 ##### Class Diagram
