@@ -7,7 +7,7 @@
 
 ##### Non-functional Requirements
 - The model can generate a response in less than 10 seconds
-- The model can handle an input of up to 500 tokens
+- The model can handle inputs of full sentences
 - The model can handle colloquial language, including words with contractions and spelling errors
 
 ### Mind map of ideas
