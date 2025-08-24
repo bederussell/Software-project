@@ -77,3 +77,23 @@ class autocomplete:  # autocomplete object that contains the subroutines to auto
             n1, n2 = n2, next_word
 
         return " ".join(words)
+
+def run():
+    with open('en_twitter.txt', 'r', errors='ignore') as file:
+        lines = file.readlines()
+        file_content = ''.join(lines)
+    
+    tokens=tokenize2(file_content)
+
+    autocomplete_model=autocomplete(tokens)
+
+     while True:
+        seed=input("\nEnter a prompt (or 'quit' to exit): ").strip()
+        
+        if seed.lower() == "quit":
+            break
+
+        numwords=int(input('Length of autocomplete response: '))
+
+        print("\nDid you mean -")
+        print("→", autocomplete_model.autocomplete(seed, numwords)) 
