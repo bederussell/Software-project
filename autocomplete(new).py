@@ -96,4 +96,9 @@ def run():
         numwords=int(input('Length of autocomplete response: '))
 
         print("\nDid you mean -")
-        print("→", autocomplete_model.autocomplete(seed, numwords)) 
+        print(autocomplete_model.autocomplete(seed, numwords)) 
+
+if __name__ == '__main__':
+    print()
+    print('--- Please be patient while the program loads ---')
+    run()
