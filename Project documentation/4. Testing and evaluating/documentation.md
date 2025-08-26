@@ -3,7 +3,7 @@
 ##### Desk Check
 
 ##### Test Data
-Below is test data for the 'autocomplete' function in my program. The different cases are testing different lengths of input 'seeds', and comparing the expected output of 'hi how are you' with what the program actually returns. Because words are predicted based on the last two words of the input (n1 and n2), the table shows what happens with each possibility of n1 and/or n2 being blank or populated. 
+Below is test data for the 'autocomplete' function in my program. The different cases are testing different lengths of input 'seeds', and comparing the expected output of 'hi how are you' with what the program actually returns. Because words are predicted based on the last two words of the input (n1 and n2), the table shows what happens with each possibility of n1 and/or n2 being either blank or populated. 
 
 ![IMG_8172](https://github.com/user-attachments/assets/58756784-babd-4e06-a1cf-ad9f8ea0af7e)
 
