@@ -25,11 +25,11 @@ def tokenize1(data): # unimportant, will delete later
 
 def tokenize2(data): # new tokenize function
     tokenized=[] # list containing phrases
-    sentence=data.split('.') # split the input data into a list, seperated by each sentence
-    for item in sentence:
-        tokens=word_tokenize(item) # tokenize all words in the phrase
+    sentences=data.split('.') # split the input data into a list, seperated by each sentence
+    for sentence in sentences:
+        tokens=word_tokenize(sentence) # tokenize all words in the phrase
         for word in tokens:
-            if not word == '!':
+            if not str(word) in ['!', '?']:
                 tokenized.append(word.lower().strip())
     return tokenized
 
@@ -56,15 +56,16 @@ class autocomplete:  # autocomplete object that contains the subroutines to auto
             return None
         
         freq=nltk.FreqDist(candidates)  # orders the most common common neighbours of the words from highest to lowest in a freqdist table
-        ret=[word for word, i in freq.most_common(top_k)]
-        print(ret)
+        ret=[word for word, i in freq.most_common(top_k)]   
         return ret
     
     def autocomplete(self, seed, num_words):  ### num_words=10  # calls the 'predict_next' function on the last two words of the prompt, finding the nearest nieghbours and adding them to the end of the prompt, repeating this for the number of words the user wants to be predicted
         words=seed.lower().split()
         
         if len(words) < 2:
-            words.insert(0, "")  # this is currently bugged
+            words.insert(0, str(words[-1])) 
+
+        print(f"'words' list -> {words}")
 
         n1, n2 = words[-2], words[-1]  # last two words of the prompt
 
@@ -76,27 +77,37 @@ class autocomplete:  # autocomplete object that contains the subroutines to auto
             words.append(next_word)
             n1, n2 = n2, next_word
 
+        if words[0]==words[1]:  # if the first two words are the same, delete the first word
+            words.pop(0)
         return " ".join(words)
-
+    
 def run():
+    from time import time
+    startTime=time()
     with open('en_twitter.txt', 'r', errors='ignore') as file:
         lines = file.readlines()
         file_content = ''.join(lines)
-    
+    print(time()-startTime)
+    startTime=time()
     tokens=tokenize2(file_content)
-
+    print(len(tokens))
+    print(time()-startTime)
+    startTime=time()
+    
     autocomplete_model=autocomplete(tokens)
+    print(time()-startTime)
+    
 
-     while True:
+    while True:
         seed=input("\nEnter a prompt (or 'quit' to exit): ").strip()
         
         if seed.lower() == "quit":
             break
 
-        numwords=int(input('Length of autocomplete response: '))
+        numwords=int(input('Length of autocomplete response (max 10): '))
 
         print("\nDid you mean -")
-        print(autocomplete_model.autocomplete(seed, numwords)) 
+        print("Returned output →", autocomplete_model.autocomplete(seed, numwords))  ### num_words=numwords
 
 if __name__ == '__main__':
     print()
