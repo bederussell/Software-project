@@ -44,7 +44,7 @@ After the list is cached, this code now retrieves the file almost instantaneousl
 
 ![pickle2](https://github.com/user-attachments/assets/82fb5588-d181-4d0b-b923-c74e3524e4a7)
 
-And as you can see, the time taken to tokenize the text file is cut down from ~10 seconds to virtually nothing: 
+And as we can see, the time taken to tokenize the text file is cut down from ~10 seconds to virtually nothing: 
 
 ![terminal3](https://github.com/user-attachments/assets/ac2843ab-4aef-4dd6-8836-322338bb05c4)
 
