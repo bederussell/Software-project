@@ -13,4 +13,17 @@ As seen in the table, errors are visible when the length of the input is less th
 
 However it seems that inserting an empty string into the 0 index of the 'words' list (the user's string input split into a list) does not work, potentially because of the 'predict_next's function's inability to handle an empty string as the n1 or n2 variable.
 
+The way that I fixed this bug was by instead of inserting an empty string as the first index of the 'words' list (when len(words) is less than 2), I changed the code so that the word inserted was a duplicate of the word that was inputted i.e. the 0 index of the 'words' list:
+
+![code2](https://github.com/user-attachments/assets/1e0f7ab3-f2a9-4925-8534-1a4fb3bd0ce3)
+
+Additionally, I added this code to the end of the function that deletes the 0 index of the 'words' list (the duplicated word) so it isn't printed to the user that the word was duplicated:
+
+![code3](https://github.com/user-attachments/assets/78fbbd45-3b4d-444f-9103-c88eb0994534)
+
+Now here in effect:
+
+![terminal](https://github.com/user-attachments/assets/04ed7f7b-b544-460e-82c9-af2705555139)
+
+
 ### Evaluate effectiveness of software solution
