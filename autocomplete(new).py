@@ -97,10 +97,16 @@ def run():
     autocomplete_model=autocomplete(tokens)
     print(time()-startTime)
     
+    empty=False
 
     while True:
-        seed=input("\nEnter a prompt (or 'quit' to exit): ").strip()
-        
+        while empty==False:
+            
+            seed=input("\nEnter a prompt (or 'quit' to exit): ").strip()
+
+            if seed.strip() != '':    # check to see if a valid seed is inputted
+                empty=True
+            
         if seed.lower() == "quit":
             break
 
