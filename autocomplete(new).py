@@ -87,16 +87,18 @@ def run():
     with open('en_twitter.txt', 'r', errors='ignore') as file:
         lines = file.readlines()
         file_content = ''.join(lines)
-    print(time()-startTime)
+    print(f"loading text file - {time()-startTime}")                 # time taken to load and process the external text file
     startTime=time()
-    tokens=tokenize2(file_content)
-    print(len(tokens))
-    print(time()-startTime)
+    #tokens=tokenize2(file_content)
+
+    with open('tokens.pkl', 'rb') as f:
+        tokens=pickle.load(f)
+
+    print(f"tokenizing file content - {time()-startTime}")                 # time taken to tokenize all of the file content into a list
     startTime=time()
-    
     autocomplete_model=autocomplete(tokens)
-    print(time()-startTime)
-    
+    print(f"creating bigram and trigram dicts - {time()-startTime}")                 # time taken to create the 'bigrams' and 'trigrams' dictionaries
+
     empty=False
 
     while True:
