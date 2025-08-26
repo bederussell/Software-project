@@ -29,5 +29,10 @@ As for when the user inputs an empty string (ie with no indexes), I added this w
 
 ![code4](https://github.com/user-attachments/assets/254f1d7a-71c0-44be-8304-a55ff083d872)
 
+### Code Optimisation Techniques
+Something I noticed whilst testing my program was that anytime I tried to run the program it would take about 10-15 seconds before the option to input a seed was shown to the user. In order to find why this was happening, I used Python's built-in time library to locate which part of the code would take so long. During the 'run' function, I implemented the time() function between every process and printed in the terminal how long every line of code would take:
+
+![code5](https://github.com/user-attachments/assets/93ad100a-03da-4fda-900a-5e62f8f2b04f)
+
 
 ### Evaluate effectiveness of software solution
