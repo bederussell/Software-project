@@ -25,5 +25,9 @@ Now here in effect:
 
 ![terminal](https://github.com/user-attachments/assets/04ed7f7b-b544-460e-82c9-af2705555139)
 
+As for when the user inputs an empty string (ie with no indexes), I added this while loop to ensure that the user has to input a string of at least one word (the 'strip()' function ensures that a series of whitespaces cannot be inputted) in order for the program to continue running:
+
+![code4](https://github.com/user-attachments/assets/254f1d7a-71c0-44be-8304-a55ff083d872)
+
 
 ### Evaluate effectiveness of software solution
