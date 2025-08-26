@@ -35,6 +35,18 @@ Something I noticed whilst testing my program was that anytime I tried to run th
 ![code5](https://github.com/user-attachments/assets/93ad100a-03da-4fda-900a-5e62f8f2b04f)
 ![terminal2](https://github.com/user-attachments/assets/7a55e13c-7871-4f95-a8b7-bb75b723b25d)
 
-As you can see, the bulk of the time taken to start the program is **tokenizing the text file contents** into the 'tokens' list. 
+As you can see, the bulk of the time taken to start the program is **tokenizing the text file contents** into the 'tokens' list. In order to optimise this process and cut the time down, I used the Python pickles library to cache the tokens list locally so it can be retrieved instantly, instead of having to tokenize the entire file everytime I run the program.
+First I ran this code to locally cache the tokenized list as a file:
+
+![pickle](https://github.com/user-attachments/assets/23cc28df-975e-4659-aab1-99c5ccfcc6cd)
+
+After the list is cached, this code now retrieves the file almost instantaneously from local storage:
+
+![pickle2](https://github.com/user-attachments/assets/82fb5588-d181-4d0b-b923-c74e3524e4a7)
+
+And as you can see, the time taken to tokenize the text file is cut down from ~10 seconds to virtually nothing: 
+
+![terminal3](https://github.com/user-attachments/assets/ac2843ab-4aef-4dd6-8836-322338bb05c4)
+
 
 ### Evaluate effectiveness of software solution
