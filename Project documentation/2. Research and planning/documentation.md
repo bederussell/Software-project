@@ -19,6 +19,7 @@ Overall, a WAgile approach with a focus on Waterfall during design phases and Ag
 ##### Class Diagram
 ![class diagram](https://github.com/user-attachments/assets/3e0cb6f3-7d59-469f-817f-9798c3e206ae)
 ##### DFD
+![dfd](https://github.com/user-attachments/assets/cc16aa1b-08ac-42e3-aafc-61ff3bcb6b37)
 ##### Structure Chart
 ![IMG_7957](https://github.com/user-attachments/assets/c997ed40-4dd3-4592-86ff-89fea4880320)
 
