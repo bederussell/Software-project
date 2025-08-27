@@ -1,7 +1,27 @@
 # Testing & Evaluating
 ### Methodologies to test and evaluate code
-##### Desk Check
 
+### Code Optimisation Techniques
+Something I noticed whilst testing my program was that anytime I tried to run the program it would take about 10-15 seconds before the option to input a seed was shown to the user. In order to find why this was happening, I used Python's built-in time library to locate which part of the code would take so long. During the 'run' function, I implemented the time() function between every process and printed in the terminal how long every line of code would take:
+
+![code5](https://github.com/user-attachments/assets/93ad100a-03da-4fda-900a-5e62f8f2b04f)
+![terminal2](https://github.com/user-attachments/assets/7a55e13c-7871-4f95-a8b7-bb75b723b25d)
+
+As you can see, the bulk of the time taken to start the program is **tokenizing the text file contents** into the 'tokens' list. In order to optimise this process and cut the time down, I used the Python pickles library to cache the tokens list locally so it can be retrieved instantly, instead of having to tokenize the entire file everytime I run the program.
+First I ran this code to locally cache the tokenized list as a file:
+
+![pickle](https://github.com/user-attachments/assets/23cc28df-975e-4659-aab1-99c5ccfcc6cd)
+
+After the list is cached, this code now retrieves the file almost instantaneously from local storage:
+
+![pickle2](https://github.com/user-attachments/assets/82fb5588-d181-4d0b-b923-c74e3524e4a7)
+
+And as we can see, the time taken to tokenize the text file is cut down from ~10 seconds to virtually nothing: 
+
+![terminal3](https://github.com/user-attachments/assets/ac2843ab-4aef-4dd6-8836-322338bb05c4)
+
+
+### Evaluate effectiveness of software solution
 ##### Test Data
 Below is test data for the 'autocomplete' function in my program. The different cases are testing different lengths of input 'seeds', and comparing the expected output of 'hi how are you' with what the program actually returns. Because words are predicted based on the last two words of the input (n1 and n2), the table shows what happens with each possibility of n1 and/or n2 being either blank or populated. 
 
@@ -28,25 +48,3 @@ Now here in effect:
 As for when the user inputs an empty string (ie with no indexes), I added this while loop to ensure that the user has to input a string of at least one word (the 'strip()' function ensures that a series of whitespaces cannot be inputted) in order for the program to continue running:
 
 ![code4](https://github.com/user-attachments/assets/254f1d7a-71c0-44be-8304-a55ff083d872)
-
-### Code Optimisation Techniques
-Something I noticed whilst testing my program was that anytime I tried to run the program it would take about 10-15 seconds before the option to input a seed was shown to the user. In order to find why this was happening, I used Python's built-in time library to locate which part of the code would take so long. During the 'run' function, I implemented the time() function between every process and printed in the terminal how long every line of code would take:
-
-![code5](https://github.com/user-attachments/assets/93ad100a-03da-4fda-900a-5e62f8f2b04f)
-![terminal2](https://github.com/user-attachments/assets/7a55e13c-7871-4f95-a8b7-bb75b723b25d)
-
-As you can see, the bulk of the time taken to start the program is **tokenizing the text file contents** into the 'tokens' list. In order to optimise this process and cut the time down, I used the Python pickles library to cache the tokens list locally so it can be retrieved instantly, instead of having to tokenize the entire file everytime I run the program.
-First I ran this code to locally cache the tokenized list as a file:
-
-![pickle](https://github.com/user-attachments/assets/23cc28df-975e-4659-aab1-99c5ccfcc6cd)
-
-After the list is cached, this code now retrieves the file almost instantaneously from local storage:
-
-![pickle2](https://github.com/user-attachments/assets/82fb5588-d181-4d0b-b923-c74e3524e4a7)
-
-And as we can see, the time taken to tokenize the text file is cut down from ~10 seconds to virtually nothing: 
-
-![terminal3](https://github.com/user-attachments/assets/ac2843ab-4aef-4dd6-8836-322338bb05c4)
-
-
-### Evaluate effectiveness of software solution
