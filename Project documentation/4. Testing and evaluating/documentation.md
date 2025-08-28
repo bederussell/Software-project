@@ -13,8 +13,6 @@
 ##### Driver
 ![driver](https://github.com/user-attachments/assets/db1c812c-04fb-4030-815a-c191fccbdb21)
 
-##### Desk Check
-
 ### Code Optimisation Techniques
 Something I noticed whilst testing my program was that anytime I tried to run the program it would take about 10-15 seconds before the option to input a seed was shown to the user. In order to find why this was happening, I used Python's built-in time library to locate which part of the code would take so long. During the 'run' function, I implemented the time() function between every process and printed in the terminal how long every line of code would take:
 
