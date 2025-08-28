@@ -1,27 +1,7 @@
 import nltk
 from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
 from collections import defaultdict
-
-stop_words=set(stopwords.words('english')) # not used in this program
-
-def tokenize1(data): # unimportant, will delete later
-    tokenized=[] # list containing lemmatized phrases
-    lemmatizer=WordNetLemmatizer()
-    sentence=data.split('.') # split the input data into a list, seperated by each sentence
-    for item in sentence:
-        word_list=[]
-        nonstopwords=[]
-        tokens=word_tokenize(item) # tokenize all words in the phrase
-        for word in tokens:
-            if word.strip().lower() not in stop_words: # check if the word is a stop word 
-                word=lemmatizer.lemmatize(word)
-                nonstopwords.append(word)
-        for word in nonstopwords:  
-            word_list.append('{:10}'.format(word))  # pad each word to a certain length (max 12 characters) and add to word list
-        tokenized.append(word_list)
-    return tokenized
+import pickle
 
 def tokenize2(data): # new tokenize function
     tokenized=[] # list containing phrases
@@ -65,8 +45,6 @@ class autocomplete:  # autocomplete object that contains the subroutines to auto
         if len(words) < 2:
             words.insert(0, str(words[-1])) 
 
-        print(f"'words' list -> {words}")
-
         n1, n2 = words[-2], words[-1]  # last two words of the prompt
 
         for i in range(num_words):
@@ -82,25 +60,21 @@ class autocomplete:  # autocomplete object that contains the subroutines to auto
         return " ".join(words)
     
 def run():
-    from time import time
-    startTime=time()
     with open('en_twitter.txt', 'r', errors='ignore') as file:
         lines = file.readlines()
         file_content = ''.join(lines)
-    print(f"loading text file - {time()-startTime}")                 # time taken to load and process the external text file
-    startTime=time()
-    #tokens=tokenize2(file_content)
+    #tokens=tokenize2(file_content) #this is what I used to tokenize the text file before using pickles caching
 
-    with open('tokens.pkl', 'rb') as f:
+    # to create the cache, I used the code below
+    #with open("tokens.pkl", "wb") as f:
+        #pickle.dump(tokens, f)
+
+    with open('tokens.pkl', 'rb') as f:   # retrieving local cache of tokenized text file (implemented for optimisation purposes)
         tokens=pickle.load(f)
 
-    print(f"tokenizing file content - {time()-startTime}")                 # time taken to tokenize all of the file content into a list
-    startTime=time()
     autocomplete_model=autocomplete(tokens)
-    print(f"creating bigram and trigram dicts - {time()-startTime}")                 # time taken to create the 'bigrams' and 'trigrams' dictionaries
 
     empty=False
-
     while True:
         while empty==False:
             
@@ -115,7 +89,8 @@ def run():
         numwords=int(input('Length of autocomplete response (max 10): '))
 
         print("\nDid you mean -")
-        print("Returned output →", autocomplete_model.autocomplete(seed, numwords))  ### num_words=numwords
+        print(autocomplete_model.autocomplete(seed, numwords))  ### num_words=numwords
+        empty=False
 
 if __name__ == '__main__':
     print()
