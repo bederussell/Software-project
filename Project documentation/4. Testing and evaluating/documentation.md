@@ -2,6 +2,14 @@
 ### Methodologies to test and evaluate code
 ##### Program level Test Data
 
+|Requirement|Test Evidence|Satisfies Requirement?|Explanation|
+|----|----|----|----|
+|User can input a string and the model will use NLP to break down and understand the input|![requirements1](https://github.com/user-attachments/assets/6835f4db-4b79-41c7-9131-7d808b9e4365)|Yes|Model uses tokenization and creates bigram and trigram dictionaries to understand relationships between words|
+|The model will predict the best response to the input, expressed in natural language|![requirements2](https://github.com/user-attachments/assets/0319835c-1157-4b26-903c-aff897d81c87)|Yes|Predicted response is in natural english colloquial language|
+|The model can generate a response in less than 10 seconds|![terminal3](https://github.com/user-attachments/assets/54cfda37-3e48-4416-ad7b-1511d2a42e47)|Yes|Responses are generated in less than 3 seconds|
+|The model can handle inputs of full sentences with punctuation|![requirements3](https://github.com/user-attachments/assets/ec37df71-2fd1-4cd7-aac7-72d155436734)|Yes|The model can handle a full sentence by extending the sentence further|
+|The model can handle colloquial language, including words with contractions and spelling errors|![requirements4](https://github.com/user-attachments/assets/7f2306ec-9833-4b97-b113-a76418921a70)|No|If the last two words are not found either of the dictionaries, then nothing will be predicted|
+
 ##### Driver
 
 ##### Desk Check
