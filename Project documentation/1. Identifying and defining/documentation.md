@@ -1,4 +1,3 @@
-Testing...
 # Identifying and Defining
 ### Requirements
 ##### Functional Requirements
